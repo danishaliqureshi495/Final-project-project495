@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DanLar E-Commerce</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- Google Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+     @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+ /*=============== VARIABLES ===============*/
+ :root {
+      --first-color: hsl(230, 75%, 56%);
+      --title-color: hsl(240, 10%, 96%);
+      --text-color: hsl(230, 12%, 40%);
+      --body-color: hsl(230, 100%, 98%);
+      --container-color: hsl(230, 100%, 97%);
+      --border-color: hsl(230, 25%, 80%);
+      --body-font: "Syne", sans-serif;
+      --font-semi-bold: 600;
+      --header-height: 3.2rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background-color: var(--body-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /*=============== HEADER ===============*/
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+      z-index: 100;
+    }
+
+    .nav {
+      height: var(--header-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .nav__logo {
+      color: var(--title-color);
+      font-size: 40px;
+      font-weight: var(--font-semi-bold);
+      transition: color 0.3s;
+    }
+    .nav__logo:hover { color: var(--first-color); }
+
+    .nav__menu { display: flex; align-items: center; gap: 2rem; }
+    .nav__link {
+      color: var(--title-color);
+      font-weight: var(--font-semi-bold);
+      transition: color .3s;
+    }
+    .nav__link:hover { color: var(--first-color); }
+
+    .nav__actions i {
+      font-size: 1.4rem;
+      color: white;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .nav__actions i:hover { color: var(--first-color); }
+
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .blur-box {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 40px 60px;
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+    }
+
+    .blur-box h1 {
+      font-size: 50px;
+    }
+
+    .blur-box span {
+      color: lightblue;
+    }
+
+    /* FEATURES SECTION */
+    .features {
+      padding: 50px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .features h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #111;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .feature-box i {
+      font-size: 35px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* PRODUCT CARDS */
+    main {
+      padding: 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #ffffff, #f3f7fa);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      position: relative;
+      border: 1px solid #eee;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 20px rgba(0, 140, 255, 0.6);
+      border-color: #00bfff;
+    }
+
+    /* TEAM SECTION */
+    .team {
+      background: #f0f4f7;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .team h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .member {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .member h4 {
+      margin-bottom: 5px;
+      color: #111;
+    }
+
+    .member p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 140, 255, 0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: white;
+      padding: 60px 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 20px;
+      color: lightblue;
+      font-size: 18px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin: 10px 0;
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .footer-column ul li:hover {
+      color: white;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+    .social-icons a:hover {
+      color: lightblue;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        margin: 10px 0;
+      }
+      .blur-box h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">DanLar</a>
+      <div class="nav__menu">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="page2.html" class="nav__link">About Us</a>
+        <a href="page3.html" class="nav__link">Services</a>
+        <a href="page4.html" class="nav__link">Contact Us</a>
+      </div>
+      <div class="nav__actions">
+        <i class="ri-search-line"></i>
+        <i class="ri-user-line" id="login-btn"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="bbbb.jpg" alt="Discount">
+    <div class="hero-overlay">
+      <div class="blur-box">
+        <h1>Welcome to <span>DanLar</span></h1>
+        <p>Your Trusted E-Commerce Platform — Big Sale Today!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2>Why Choose DanLar?</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <i class="fas fa-shipping-fast"></i>
+        <h4>Fast & Free Shipping</h4>
+        <p>Enjoy quick, reliable delivery on all your favorite products.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-lock"></i>
+        <h4>Secure Payments</h4>
+        <p>Your data is safe with end-to-end encryption technology.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-tags"></i>
+        <h4>Best Deals Everyday</h4>
+        <p>Exclusive discounts on top brands only at DanLar.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-headset"></i>
+        <h4>24/7 Support</h4>
+        <p>We’re here to help you anytime, anywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <main>
+    <h2 class="section-title">Featured Products</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="shoes1.png" alt="Product 1">
+        <div class="card-text">
+          <h3>Stylish Shoes</h3>
+          <p>Step out in confidence with our latest footwear collection.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="p20-watch.png" alt="Product 2">
+        <div class="card-text">
+          <h3>Luxury Watches</h3>
+          <p>Elegance meets accuracy in every piece we craft.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="p19-bag.png" alt="Product 3">
+        <div class="card-text">
+          <h3>Leather Bags</h3>
+          <p>Designed to perfection — style that carries confidence.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="p5-tv.png" alt="Product 4">
+        <div class="card-text">
+          <h3>LED TV</h3>
+          <p>Immersive sound quality for music lovers.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="earbuds2.png" alt="Product 5">
+        <div class="card-text">
+          <h3>Earbuds</h3>
+          <p>Signature scents to make every moment memorable.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- TEAM SECTION -->
+  <section class="team">
+    <h2>Meet Our Leadership</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="page2_back_men.webp" alt="CEO">
+        <h4>Daniel Larson</h4>
+        <p>Chief Executive Officer (CEO)</p>
+      </div>
+      <div class="member">
+        <img src="page_2_back2.jpg" alt="Co-Founder">
+        <h4>Sarah Khan</h4>
+        <p>Co-Founder</p>
+      </div>
+      <div class="member">
+        <img src="back3p2.webp" alt="Chairman">
+        <h4>Michael Reed</h4>
+        <p>Chairman</p>
+      </div>
+      <div class="member">
+        <img src="back4p2.jpg" alt="Chief Designer">
+        <h4>Lisa Park</h4>
+        <p>Chief Design Officer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <h4>About DanLar</h4>
+        <ul>
+          <li>Our Story</li>
+          <li>Careers</li>
+          <li>Investor Relations</li>
+          <li>Press Releases</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Customer Service</h4>
+        <ul>
+          <li>Help Center</li>
+          <li>Track Your Order</li>
+          <li>Returns & Refunds</li>
+          <li>Shipping Info</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Shop With Us</h4>
+        <ul>
+          <li>Deals of the Day</li>
+          <li>Gift Cards</li>
+          <li>Top Categories</li>
+          <li>New Arrivals</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Email: support@danlar.com</li>
+          <li>Phone: +1 (800) 555-2435</li>
+          <li>Address: San Francisco, CA</li>
+        </ul>
+        <div class="social-icons" style="margin-top:10px;">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 DanLar E-Commerce. All Rights Reserved. | Designed with ❤️ by DanLar Team
+    </div>
+  </footer>
+
+</body>
+</html>

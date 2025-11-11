@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<!-- ================ Header =========================================================== -->
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#" class="nav__logo">DanLar</a>
+
+    <!-- ============= ADD TO CART =================== -->
+    <div class="nav__actions">
+      <i class="ri-shopping-cart-2-line nav__cart" id="cart-btn"></i>
+      <span id="cart-count" class="cart-count">0</span>
+    </div>
+
+    <!-- =============ADD TO CART======= -->
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#" class="nav__link">Home</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="page2.html" class="nav__link">About Us</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="page3.html" class="nav__link">Services</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="page4.html" class="nav__link">Contact Us</a>
+        </li>
+        <!-- ========== Add to Cart =============================================================== -->
+
+        <!-- ================ Add to cart End =========================================================== -->
+      </ul>
+
+      <!-- Close button -->
+      <div class="nav__close" id="nav-close">
+        <i class="ri-close-line"></i>
+      </div>
+    </div>
+
+    <div class="nav__actions">
+      <!-- Search button -->
+      <i class="ri-search-line nav__search" id="search-btn"></i>
+
+      <!-- Login button -->
+      <i class="ri-user-line nav__login" id="login-btn"></i>
+
+      <!-- Toggle button -->
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+
+  </nav>
+</header>
+
+
+<!--==================== SEARCH ====================-->
+<div class="search" id="search">
+  <form action="" class="search__form">
+    <i class="ri-search-line search__icon"></i>
+    <input type="search" placeholder="What are you looking for?" class="search__input">
+  </form>
+
+  <i class="ri-close-line search__close" id="search-close"></i>
+</div>
+
+<!--==================== LOGIN ====================-->
+<div class="login" id="login">
+  <form action="" class="login__form">
+    <h2 class="login__title">Log In</h2>
+
+    <div class="login__group">
+      <div>
+        <label for="email" class="login__label">Email</label>
+        <input type="email" placeholder="Write your email" id="email" class="login__input">
+      </div>
+
+      <div>
+        <label for="password" class="login__label">Password</label>
+        <input type="password" placeholder="Enter your password" id="password" class="login__input">
+      </div>
+    </div>
+
+    <div>
+      <p class="login__signup">
+        You do not have an account? <a href="#">Sign up</a>
+      </p>
+
+      <a href="#" class="login__forgot">
+        You forgot your password
+      </a>
+
+      <button type="submit" class="login__button">Log In</button>
+    </div>
+  </form>
+
+  <i class="ri-close-line login__close" id="login-close"></i>
+</div>
+
+<!-- ===================== Header Closed ========================================================= -->
+
+
+<!-- ============= Hero Section Start ========================================== -->
+<!-- Carousel -->
+<div class="slider">
+  <div class="list">
+    <div class="item">
+      <img src="bac1.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="pexels-solliefoto-298863.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="back2n.webp" alt="">
+    </div>
+    <div class="item">
+      <img src="back1n.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="back3n.png" alt="">
+    </div>
+  </div>
+  <div class="buttons">
+    <button id="prev">
+      << /button>
+        <button id="next">></button>
+  </div>
+  <ul class="dots">
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- ====================== Features Section ====================================== -->
+<section id="feature" class="section-p1">
+  <div class="fe-box">
+    <img src="free delivery.png">
+    <h6>free shipping </h6>
+  </div>
+
+  <div class="fe-box">
+    <img src="ooo.png">
+    <h6>Cash on delivery </h6>
+  </div>
+
+  <div class="fe-box">
+    <img src="on time.png">
+    <h6>On Time </h6>
+  </div>
+
+  <div class="fe-box">
+    <img src="Fe1.png">
+    <h6>Available 24/7 </h6>
+  </div>
+
+  <div class="fe-box">
+    <img src="fe3.png">
+    <h6>Urgent view </h6>
+  </div>
+
+  <div class="fe-box">
+    <img src="o.png">
+    <h6>100% guaranteed</h6>
+  </div>
+</section>
+
+
+<!-- ========================= Products =============================================== -->
+<section id="product1" class="section-p1">
+  <h2>Featured products</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+
+  <!-- ========= Catagories ===================== -->
+  <div class="listk">
+
+    <div class="itemk">
+      <img src="men.webp" alt="">
+      <div class="content">
+        <h1>Men Catagory</h1>
+        <div class="des">
+          Discover the latest men’s collection! Trendy shirts, stylish jeans, and classy footwear — all in one place.
+          Explore our new arrivals and upgrade your wardrobe with fresh, fashionable looks for every occasion.
+        </div>
+      </div>
+    </div>
+
+    <div class="itemk">
+      <img src="women.webp">
+      <div class="content">
+        <h1>Female Catagory</h1>
+        <div class="des">
+          Explore our latest women’s collection! Elegant dresses, trendy tops, and chic accessories designed for every
+          occasion. Discover new arrivals that blend comfort and style perfectly — upgrade your fashion game with our
+          stunning new trends.
+        </div>
+      </div>
+    </div>
+
+    <div class="itemk">
+      <img src="electronics.webp" alt="">
+      <div class="content">
+        <h1>Electronic</h1>
+        <div class="des">
+          Discover the latest in electronics! From smart gadgets to powerful devices, explore our new arrivals featuring
+          cutting-edge technology and sleek designs. Upgrade your lifestyle with innovative products built for
+          performance, convenience,
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- =========== Catagory End ================================== -->
+<!-- ============== PRODUCTS add to cart ==================================== -->
+<section class="productsop">
+  <div class="productt-card">
+    <img src="earbuds2.png" alt="Gaming Laptop">
+    <h3>Gaming Earbuds</h3>
+    <p class="price">$30</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+  <div class="productt-card">
+    <img src="p1-tv.png" alt="Headphones">
+    <h3>LED SMART TV</h3>
+    <p class="price">$6</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+  <div class="productt-card">
+    <img src="p2-parse.png" alt="Smartwatch">
+    <h3>Parse fora</h3>
+    <p class="price">$3</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+  <div class="productt-card">
+    <img src="p3- jacket.png" alt="Smartwatch">
+    <h3>jacket leather</h3>
+    <p class="price">$4</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p4-tv.png" alt="Smartwatch">
+    <h3>Smart TV K</h3>
+    <p class="price">$2</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p5-tv.png" alt="Smartwatch">
+    <h3>Smart TV S</h3>
+    <p class="price">$10</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p6-parse.png" alt="Smartwatch">
+    <h3>Parse Women</h3>
+    <p class="price">$125</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p7-parse.png" alt="Smartwatch">
+    <h3>Parse Female </h3>
+    <p class="price">$149</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p8-parse.png" alt="Smartwatch">
+    <h3>Parse new</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p9-shirt.png" alt="Smartwatch">
+    <h3>T- Shirt Polo</h3>
+    <p class="price">$16</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p10-shirt.png" alt="Smartwatch">
+    <h3>T- Shirt men</h3>
+    <p class="price">$768</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p11-jeans.png" alt="Smartwatch">
+    <h3>Jeans</h3>
+    <p class="price">$131</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p12-mob.png" alt="Smartwatch">
+    <h3>Oppo A16E</h3>
+    <p class="price">$144</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p13-mob.png" alt="Smartwatch">
+    <h3>Iphone 12 pro max</h3>
+    <p class="price">$55</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p14-oven.png" alt="Smartwatch">
+    <h3>Brand Oven</h3>
+    <p class="price">$66</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p15-laptop.png" alt="Smartwatch">
+    <h3>Laptop oppo</h3>
+    <p class="price">$99</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p16-laptop.png" alt="Smartwatch">
+    <h3>Laptop</h3>
+    <p class="price">$11</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p17-jacket.png" alt="Smartwatch">
+    <h3>Jacket Men</h3>
+    <p class="price">$1323</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p18-jacket.png" alt="Smartwatch">
+    <h3>Jacket women</h3>
+    <p class="price">$1</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+
+  <div class="productt-card">
+    <img src="p19-bag.png" alt="Smartwatch">
+    <h3>New Bag</h3>
+    <p class="price">$99</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p20-watch.png" alt="Smartwatch">
+    <h3>Smart Watch</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="p21-watch.png" alt="Smartwatch">
+    <h3>Smart Watch S</h3>
+    <p class="price">$123</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="earbuds1.png" alt="Smartwatch">
+    <h3>Earbuds Pro</h3>
+    <p class="price">$14</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="makeup2.png" alt="Smartwatch">
+    <h3>Makeup</h3>
+    <p class="price">$12</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+</section>
+
+<div class="cartt" id="cartt">
+  <h2>DanLar Cart</h2>
+  <div class="cartt-content" id="cart-content"></div>
+  <div class="cartt-total">
+    <h3>Total: $<span id="cart-total">0</span></h3>
+    <button id="checkoutt-btn">Checkout</button>
+  </div>
+  <i class="ri-close-line cart-close" id="cart-close"></i>
+</div>
+
+<div class="checkoutt-modal" id="checkout-modal">
+  <div class="checkoutt-box">
+    <i class="ri-checkbox-circle-line"></i>
+    <h2>Payment Successful!</h2>
+    <p>Thank you for shopping with DanLar 💙</p>
+    <button id="close-modal">Close</button>
+  </div>
+</div>
+
+<!-- =================== PREODUCT END ======================================== -->
+<!-- ========================== banner ================================================== -->
+<section id="banner" class="section-m1">
+  <h4>Repair Services</h4>
+  <h2>up to <span>70% off</span> - All t-shirts & Accessories</h2>
+  <button class="normal">Explore More</button>
+
+</section>
+
+<!-- ============================== Products 2 New Arrival =================================== -->
+<h1>DanLar New Arrival</h1>
+<p>Discover the latest trends at DanLar! Our new arrivals bring fresh styles, innovative gadgets, and top-quality
+  products. Stay ahead with must-have electronics, fashion, and accessories designed just for you.</p>
+
+<section class="productsop">
+
+  <div class="productt-card">
+    <img src="png2.png" alt="Gaming Laptop">
+    <h3>Books</h3>
+    <p class="price">$30</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+  <div class="productt-card">
+    <img src="pngwing.com (1).png" alt="Headphones">
+    <h3>Computer</h3>
+    <p class="price">$6</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+  <div class="productt-card">
+    <img src="pngwing.com (2).png" alt="Smartwatch">
+    <h3>Computer fora</h3>
+    <p class="price">$3</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+  <div class="productt-card">
+    <img src="pngwing.com (3).png" alt="Smartwatch">
+    <h3>Aux Laptop</h3>
+    <p class="price">$4</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="pngwing.com (4).png" alt="Smartwatch">
+    <h3>Au Laptop</h3>
+    <p class="price">$2</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="pngwing.com (5).png" alt="Smartwatch">
+    <h3>Shoes Hype</h3>
+    <p class="price">$10</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="pngwing.com (6).png" alt="Smartwatch">
+    <h3> Women shoes</h3>
+    <p class="price">$125</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="shoes1.png" alt="Smartwatch">
+    <h3>Sneakers </h3>
+    <p class="price">$149</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+  <div class="productt-card">
+    <img src="pngwing.com (7).png" alt="Smartwatch">
+    <h3>Power bank</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+  <div class="productt-card">
+    <img src="pngwing.com (8).png" alt="Smartwatch">
+    <h3>Perfume</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+  <div class="productt-card">
+    <img src="pngwing.com (9).png" alt="Smartwatch">
+    <h3>Feidge</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+  <div class="productt-card">
+    <img src="pngwing.com (11).png" alt="Smartwatch">
+    <h3>Fan</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+  <div class="productt-card">
+    <img src="pngwing.com.png" alt="Smartwatch">
+    <h3>HK Laptop</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+  <div class="productt-card">
+    <img src="productO1.png" alt="Smartwatch">
+    <h3>FK TV</h3>
+    <p class="price">$19</p>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+
+
+</section>
+
+<!-- ====================== Last 2 banner ================================================ -->
+<section id="sm-banner" class="section-p1">
+  <div class="banner-box">
+    <h4>Crazy Deals</h4>
+    <h2>Buy One Get One Free</h2>
+    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span>
+    <button class="white">Learn More</button>
+  </div>
+
+  <div class="banner-box banner-box2">
+    <h4>Spring/Summer</h4>
+    <h2>Upcoming Season</h2>
+    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span>
+    <button class="white">Collection</button>
+  </div>
+</section>
+
+<!-- ====================== last 3 banner =================================================== -->
+<section id="bannerbg">
+  <div class="banner-box">
+    <h2>SEASONAL SALE</h2>
+    <h3>Winter collection -50% OFF</h3>
+  </div>
+
+  <div class="banner-box banner-box2">
+    <h2>NEW FOOTWEAR Collection</h2>
+    <h3>Winter collection -50% OFF</h3>
+  </div>
+
+  <div class="banner-box banner-box3">
+    <h2>T-SHIRTS</h2>
+    <h3>Winter collection -50% OFF</h3>
+  </div>
+
+
+</section>
+
+
+<!-- ========================= fOOTER ========================================================== -->
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+    <h4>Sign up for Newsletter</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>special offers</span></p>
+  </div>
+
+  <div class="form">
+    <input type="text" placeholder="use email address">
+    <button class="normal">Sign up</button>
+  </div>
+</section>
+
+<!-- ==================== last ======================================= -->
+
+
+<footer>
+  <div class="containerr">
+    <div class="col-1">
+      <img src="" alt="">
+      <p>Salam, My Name is Danish Ali Qureshi My life desire is to gain a thing, that is maybe a goal
+        a person a job anything i can't tell, so i have readed some best lines i am telling you
+        'consistency is harder when thair is no one to clap'
+      </p>
+    </div>
+    <div class="col-2">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+    </div>
+    <div class="col-3">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#">Free Home Delivery</a></li>
+        <li><a href="#">Buy 1 get 1 Free</a></li>
+        <li><a href="#">Cash on deliver</a></li>
+        <li><a href="#">Jazz cash</a></li>
+        <li><a href="#">Easypaisa</a></li>
+        <li><a href="#">Bank transfer</a></li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <h3>Newsletter</h3>
+      <form>
+        <i class="far fa-envelope"></i>
+        <input type="email" placeholder="Enter your email" required>
+        <button><i class="fas fa-arrow-right"></i></button>
+      </form>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-2">
+    <p>© 2021 | Made with ❤️ by Danish Ali Qureshi. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<script src="main.js"></script>
+</body>
+
+</html>

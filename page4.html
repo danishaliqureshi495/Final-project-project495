@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DanLar - Contact Us</title>
+
+  <!-- Remix & Font Awesome Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /*=============== VARIABLES ===============*/
+    :root {
+      --first-color: hsl(230, 75%, 56%);
+      --title-color: hsl(240, 10%, 96%);
+      --text-color: hsl(230, 12%, 40%);
+      --body-color: hsl(230, 100%, 98%);
+      --container-color: hsl(230, 100%, 97%);
+      --border-color: hsl(230, 25%, 80%);
+      --body-font: "Syne", sans-serif;
+      --font-semi-bold: 600;
+      --header-height: 3.2rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background-color: var(--body-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /*=============== HEADER ===============*/
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+      z-index: 100;
+    }
+
+    .nav {
+      height: var(--header-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .nav__logo {
+      color: var(--title-color);
+      font-size: 40px;
+      font-weight: var(--font-semi-bold);
+      transition: color 0.3s;
+    }
+    .nav__logo:hover { color: var(--first-color); }
+
+    .nav__menu { display: flex; align-items: center; gap: 2rem; }
+    .nav__link {
+      color: var(--title-color);
+      font-weight: var(--font-semi-bold);
+      transition: color .3s;
+    }
+    .nav__link:hover { color: var(--first-color); }
+
+    .nav__actions i {
+      font-size: 1.4rem;
+      color: white;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .nav__actions i:hover { color: var(--first-color); }
+
+    /*=============== HERO SECTION ===============*/
+    .contact-hero {
+      background: url('contact-bg.webp') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(14, 27, 112);
+      text-align: center;
+      flex-direction: column;
+      padding: 0 20px;
+      margin-top: var(--header-height);
+    }
+
+    .contact-hero h1 {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .contact-hero p {
+      font-size: 20px;
+      max-width: 700px;
+   
+    }
+
+    /*=============== COMPANY INFO SECTION ===============*/
+    .company-info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 50px;
+      background-color: #f5f8fb;
+    }
+
+    .company-info img {
+      width: 48%;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform .3s;
+    }
+
+    .company-info img:hover {
+      transform: scale(1.03);
+    }
+
+    .info-text {
+      width: 48%;
+    }
+
+    .info-text h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+
+    .info-text p {
+      font-size: 17px;
+      color: #555;
+    }
+
+    /*=============== CONTACT FORM SECTION ===============*/
+    .contact-section {
+      background: white;
+      padding: 80px 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .contact-details {
+      width: 45%;
+    }
+
+    .contact-details h2 {
+      font-size: 30px;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .contact-details p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .contact-details i {
+      color: #00bfff;
+      margin-right: 10px;
+    }
+
+    .contact-form {
+      width: 50%;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform .3s;
+    }
+
+    .contact-form:hover { transform: translateY(-5px); }
+
+    .contact-form h3 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-family: var(--body-font);
+      transition: border .3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #00bfff;
+      outline: none;
+    }
+
+    .contact-form button {
+      background: #00bfff;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background .3s, transform .3s;
+    }
+
+    .contact-form button:hover {
+      background: #008fcc;
+      transform: scale(1.05);
+    }
+
+    /*=============== PHOTO SECTION ===============*/
+    .photo-gallery {
+      background: #f0f4f7;
+      padding: 70px 50px;
+      text-align: center;
+    }
+
+    .photo-gallery h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .photo-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .photo-card p {
+      padding: 15px;
+      color: #555;
+    }
+
+    /*=============== FOOTER ===============*/
+    footer {
+      background: #111;
+      color: white;
+      padding: 60px 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 20px;
+      color: lightblue;
+      font-size: 18px;
+    }
+
+    .footer-column ul li {
+      margin: 10px 0;
+      color: #bbb;
+      font-size: 14px;
+      transition: color .3s;
+    }
+
+    .footer-column ul li:hover { color: white; }
+
+    .footer-search {
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .footer-search input {
+      width: 80%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    .footer-search button {
+      background: lightblue;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background .3s;
+    }
+
+    .footer-search button:hover { background: #00bfff; }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: color .3s, transform .3s;
+    }
+
+    .social-icons a:hover {
+      color: lightblue;
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .company-info img, .info-text, .contact-details, .contact-form {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">DanLar</a>
+      <div class="nav__menu">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="page2.html" class="nav__link">About Us</a>
+        <a href="page3.html" class="nav__link">Services</a>
+        <a href="page4.html" class="nav__link">Contact Us</a>
+      </div>
+      <div class="nav__actions">
+        <i class="ri-search-line"></i>
+        <i class="ri-user-line" id="login-btn"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <h1>Get in Touch with DanLar</h1>
+    <p>Founded in 1982, DanLar has been a leader in innovation, technology, and customer success. We’d love to hear from you!</p>
+  </section>
+
+  <!-- COMPANY INFO -->
+  <section class="company-info">
+    <img src="journey.jpg" alt="Our Journey since 1986">
+    <div class="info-text">
+      <h2>Our Journey Since 1982</h2>
+      <p>DanLar began as a small creative agency in 1982, driven by a passion for design and innovation. Over the years, we’ve grown into a global firm providing top-notch digital services. From humble beginnings to a tech powerhouse, our goal remains the same — helping businesses grow through technology and creativity.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-details">
+      <h2>Contact Information</h2>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Street, San Francisco, CA</p>
+      <p><i class="fas fa-phone-alt"></i> +1 (800) 555-2435</p>
+      <p><i class="fas fa-envelope"></i> support@danlar.com</p>
+      <p><i class="fas fa-clock"></i> Monday - Friday: 9am - 6pm</p>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- PHOTO SECTION -->
+  <section class="photo-gallery">
+    <h2>Our Work & Culture</h2>
+    <div class="photo-grid">
+      <div class="photo-card"><img src="l.jpg" alt="Office"><p>Creative collaboration spaces that inspire innovation.</p></div>
+      <div class="photo-card"><img src="office2.webp" alt="Office"><p>Modern workspaces designed for productivity and teamwork.</p></div>
+      <div class="photo-card"><img src="1122.webp" alt="Office"><p>Our team celebrating milestones and success together.</p></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <h4>About DanLar</h4>
+        <ul>
+          <li>Our Story</li>
+          <li>Careers</li>
+          <li>Investors</li>
+          <li>Newsroom</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Stay Connected</h4>
+        <div class="footer-search">
+          <input type="text" placeholder="Search here...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="social-icons" style="margin-top:15px;">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Email: support@danlar.com</li>
+          <li>Phone: +1 (800) 555-2435</li>
+          <li>San Francisco, CA</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 DanLar Corporation. All Rights Reserved. Designed with ❤️ by the DanLar Team.
+    </div>
+  </footer>
+
+  <script>
+    // Simple login alert (can be replaced with real modal)
+    document.getElementById("login-btn").addEventListener("click", function(){
+      alert("Login feature coming soon!");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DanLar - Services</title>
+
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+     @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+ /*=============== VARIABLES ===============*/
+ :root {
+      --first-color: hsl(230, 75%, 56%);
+      --title-color: hsl(240, 10%, 96%);
+      --text-color: hsl(230, 12%, 40%);
+      --body-color: hsl(230, 100%, 98%);
+      --container-color: hsl(230, 100%, 97%);
+      --border-color: hsl(230, 25%, 80%);
+      --body-font: "Syne", sans-serif;
+      --font-semi-bold: 600;
+      --header-height: 3.2rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background-color: var(--body-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /*=============== HEADER ===============*/
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+      z-index: 100;
+    }
+
+    .nav {
+      height: var(--header-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .nav__logo {
+      color: var(--title-color);
+      font-size: 40px;
+      font-weight: var(--font-semi-bold);
+      transition: color 0.3s;
+    }
+    .nav__logo:hover { color: var(--first-color); }
+
+    .nav__menu { display: flex; align-items: center; gap: 2rem; }
+    .nav__link {
+      color: var(--title-color);
+      font-weight: var(--font-semi-bold);
+      transition: color .3s;
+    }
+    .nav__link:hover { color: var(--first-color); }
+
+    .nav__actions i {
+      font-size: 1.4rem;
+      color: white;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .nav__actions i:hover { color: var(--first-color); }
+
+
+    /* TOP SECTION (Instead of Banner) */
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 70px 50px;
+      background: #f4f8fb;
+    }
+
+    .intro img {
+      width: 48%;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .intro-text {
+      width: 48%;
+    }
+
+    .intro-text h1 {
+      font-size: 40px;
+      color: #111;
+      margin-bottom: 15px;
+    }
+
+    .intro-text span {
+      color: #00bfff;
+    }
+
+    .intro-text p {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* SERVICES GRID */
+    .services {
+      padding: 70px 50px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 30px;
+      color: #111;
+      margin-bottom: 40px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card i {
+      font-size: 40px;
+      color: #00bfff;
+      margin-bottom: 15px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      background: white;
+    }
+
+    /* IMAGE + TEXT SECTION */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 50px;
+      background: #f0f4f7;
+    }
+
+    .about-section img {
+      width: 48%;
+      border-radius: 12px;
+    }
+
+    .about-text {
+      width: 48%;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 60px 20px;
+      background: black;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .cta button {
+      background: lightblue;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .cta button:hover {
+      background: #00bfff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: white;
+      padding: 60px 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 20px;
+      color: lightblue;
+      font-size: 18px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin: 10px 0;
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .footer-column ul li:hover {
+      color: white;
+      cursor: pointer;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+    .social-icons a:hover {
+      color: lightblue;
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .search-bar {
+        margin-top: 10px;
+      }
+      .intro img, .intro-text, .about-section img, .about-text {
+        width: 100%;
+      }
+      .intro {
+        text-align: center;
+      }
+      .about-section {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">DanLar</a>
+      <div class="nav__menu">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="page2.html" class="nav__link">About Us</a>
+        <a href="page3.html" class="nav__link">Services</a>
+        <a href="page4.html" class="nav__link">Contact Us</a>
+      </div>
+      <div class="nav__actions">
+        <i class="ri-search-line"></i>
+        <i class="ri-user-line" id="login-btn"></i>
+      </div>
+    </nav>
+  </header>
+  
+
+  <!-- INTRO SECTION -->
+  <section class="intro">
+    <div class="intro-text">
+      <h1>Explore Our <span>Professional Services</span></h1>
+      <p>At DanLar, we provide world-class solutions designed to elevate your business. From digital innovation to 24/7 support, we’ve got you covered every step of the way.</p>
+    </div>
+    <img src="project.webp" alt="Team working on projects">
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <h2>What We Offer</h2>
+    <div class="service-grid">
+      <div class="service-card"><i class="fas fa-laptop-code"></i><h3>Web Development</h3><p>Custom, responsive websites crafted for your brand.</p></div>
+      <div class="service-card"><i class="fas fa-bullhorn"></i><h3>Digital Marketing</h3><p>Grow faster with SEO, Google Ads, and social media strategies.</p></div>
+      <div class="service-card"><i class="fas fa-mobile-alt"></i><h3>App Development</h3><p>Native & hybrid apps built for performance and impact.</p></div>
+      <div class="service-card"><i class="fas fa-headset"></i><h3>Customer Support</h3><p>24/7 support that keeps your customers satisfied.</p></div>
+      <div class="service-card"><i class="fas fa-cloud"></i><h3>Cloud Solutions</h3><p>Secure cloud hosting to scale your business easily.</p></div>
+      <div class="service-card"><i class="fas fa-chart-line"></i><h3>Analytics & Insights</h3><p>Data-driven strategies to boost your business outcomes.</p></div>
+      <div class="service-card"><i class="fas fa-palette"></i><h3>UI/UX Design</h3><p>Intuitive and modern designs that impress users.</p></div>
+      <div class="service-card"><i class="fas fa-handshake"></i><h3>Consulting Services</h3><p>Expert guidance to turn your ideas into success.</p></div>
+    </div>
+  </section>
+
+  <!-- ABOUT / IMAGE SECTION -->
+  <section class="about-section">
+    <img src="group.webp" alt="DanLar Team at Work">
+    <div class="about-text">
+      <h2>Our Vision</h2>
+      <p>We believe in creating digital experiences that truly connect with people. At DanLar, innovation meets dedication — we strive to deliver results that make an impact for every business we work with.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Let’s Build Something Great Together</h2>
+    <p>Contact us today and take your business to the next level.</p>
+    <button>Get in Touch</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <h4>About DanLar</h4>
+        <ul>
+          <li>Our Story</li>
+          <li>Careers</li>
+          <li>Investor Relations</li>
+          <li>Press Releases</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Customer Service</h4>
+        <ul>
+          <li>Help Center</li>
+          <li>Track Your Order</li>
+          <li>Returns & Refunds</li>
+          <li>Shipping Info</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Shop With Us</h4>
+        <ul>
+          <li>Deals of the Day</li>
+          <li>Gift Cards</li>
+          <li>Top Categories</li>
+          <li>New Arrivals</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Email: support@danlar.com</li>
+          <li>Phone: +1 (800) 555-2435</li>
+          <li>Address: San Francisco, CA</li>
+        </ul>
+        <div class="social-icons" style="margin-top:10px;">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 DanLar E-Commerce. All Rights Reserved. | Designed with ❤️ by DanLar Team
+    </div>
+  </footer>
+</body>
+</html>
